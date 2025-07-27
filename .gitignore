@@ -1,4 +1,4 @@
-# Development files
+# Dependencies
 node_modules/
 npm-debug.log*
 yarn-debug.log*
@@ -19,6 +19,9 @@ yarn-error.log*
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Windows Zone.Identifier files (from downloads/transfers)
+*:Zone.Identifier*
 
 # Logs
 *.log
@@ -44,7 +47,14 @@ jspm_packages/
 tmp/
 temp/
 
-# User-specific files
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Development/debugging images (screenshots, test images, etc.)
 *.jpg
 *.jpeg
 *.png
@@ -52,14 +62,28 @@ temp/
 *.bmp
 *.tiff
 *.webp
+
+# Exclude actual game assets from the ignore
+!assets/**/*.png
+!assets/**/*.jpg
+!assets/**/*.jpeg
+!assets/**/*.gif
+!assets/**/*.webp
+
+# Project-specific temp/debug files
 newbad.jpg
 roughmobile*
 messedup.png
 resizeissue*.png
-
-# Environment files
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+issue.jpg
+mobile*.jpg
+overlap.png
+sideissie.png
+statsissue.png
+titlelooksbad.png
+gameoverctas.png
+mainmenucta.png
+000.jpg
+919191.jpg
+99999.png
+mobileemssedup.jpg
