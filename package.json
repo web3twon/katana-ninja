@@ -1,0 +1,16 @@
+{
+  "name": "katana-ninja",
+  "version": "1.0.0",
+  "description": "A fruit ninja style game built with Phaser.js",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "start": "python3 -m http.server 8000"
+  },
+  "keywords": ["game", "phaser", "fruit-ninja", "javascript", "html5"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "phaser": "^3.80.1"
+  }
+}

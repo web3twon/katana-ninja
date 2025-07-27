@@ -1,0 +1,39 @@
+KATANA NINJA - REQUIRED AUDIO ASSETS
+=====================================
+
+Based on the game code analysis, here are the audio assets that would enhance the game experience:
+
+SOUND EFFECTS:
+--------------
+1. slice_fruit.wav/mp3 - Sound when slicing fruits (multiple variations: slice_fruit_1, slice_fruit_2, slice_fruit_3)
+2. bomb_explosion.wav/mp3 - Sound when hitting a bomb (game over)
+3. combo_hit.wav/mp3 - Special sound for combo multipliers
+4. whoosh.wav/mp3 - Sound for slice/swipe motion
+5. fruit_miss.wav/mp3 - Sound when fruit falls off screen (lose life)
+6. button_click.wav/mp3 - UI button interaction sounds
+7. button_hover.wav/mp3 - UI button hover sounds
+8. game_over.wav/mp3 - Game over sound effect
+9. new_high_score.wav/mp3 - Celebration sound for new high score
+
+BACKGROUND MUSIC:
+----------------
+1. menu_music.mp3 - Background music for menu scene (looping)
+2. game_music.mp3 - Background music for gameplay (looping, energetic)
+3. game_over_music.mp3 - Background music for game over scene
+
+NOTES:
+------
+- All audio files should be in common web formats (MP3, WAV, OGG)
+- Keep file sizes reasonable for web loading
+- Consider volume levels and audio balancing
+- The game currently uses programmatically generated graphics, so audio would significantly enhance the user experience
+- Audio integration would require adding Phaser audio calls to the existing game scenes
+
+IMPLEMENTATION LOCATIONS:
+------------------------
+- GameScene.js line 258: sliceFruit() method - add slice sound
+- GameScene.js line 264: sliceBomb() method - add explosion sound
+- GameScene.js line 301: updateComboText() method - add combo sound
+- GameScene.js line 284: loseLife() method - add miss sound
+- MenuScene.js: Add background music and button sounds
+- GameOverScene.js: Add game over music and button sounds

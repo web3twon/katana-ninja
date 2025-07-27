@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Katana Ninja</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #101631, #1a2550, #4bbbf0);
+            font-family: 'Poppins', 'Arial', sans-serif;
+            overflow: hidden;
+        }
+        
+        body {
+            display: block;
+        }
+        
+        #game-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+        
+        canvas {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw !important;
+            height: 100vh !important;
+            touch-action: none;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            
+            /* Smooth anti-aliasing for mobile devices */
+            image-rendering: auto;
+            image-rendering: smooth;
+            -ms-interpolation-mode: bicubic;
+            
+            /* Enhanced font smoothing for mobile text rendering */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-smooth: always;
+            text-rendering: optimizeLegibility;
+            
+            /* Hardware acceleration and smooth transforms */
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+            will-change: transform;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+        
+        /* Additional mobile optimizations */
+        body {
+            -webkit-text-size-adjust: 100%;
+            -moz-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+            
+            /* Enhanced text rendering for mobile */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            font-feature-settings: "liga", "kern";
+            
+            /* Better font rendering on high-DPI displays */
+            font-synthesis: none;
+            font-variant-ligatures: common-ligatures;
+            font-kerning: auto;
+        }
+        
+        /* Prevent pull-to-refresh and other mobile gestures */
+        body, html {
+            overscroll-behavior: none;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 0;
+                /* Force hardware acceleration on mobile */
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+            
+            #game-container {
+                border-radius: 0;
+                box-shadow: none;
+                /* Optimize for mobile performance */
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                -webkit-perspective: 1000;
+                perspective: 1000;
+            }
+            
+            canvas {
+                border-radius: 0;
+                /* Mobile-specific smooth rendering optimizations */
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                
+                /* Ensure smooth anti-aliased rendering on mobile */
+                image-rendering: auto;
+                image-rendering: smooth;
+                -ms-interpolation-mode: bicubic;
+                
+                /* Enhanced mobile font smoothing */
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+        }
+        
+        /* High-DPI display optimizations */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            canvas {
+                /* Enhanced antialiasing for high-DPI mobile displays */
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                image-rendering: auto;
+                image-rendering: smooth;
+                text-rendering: optimizeLegibility;
+            }
+        }
+        
+        /* Ultra high-DPI display specific optimizations (Retina) */
+        @media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+            canvas {
+                /* Ultra smooth rendering for Retina displays */
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                image-rendering: auto;
+                image-rendering: smooth;
+                -ms-interpolation-mode: bicubic;
+                text-rendering: optimizeLegibility;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.min.js"></script>
+    <script src="js/utils/ResponsiveUtils.js"></script>
+    <script src="js/utils/ColorExtractor.js"></script>
+    <script src="js/utils/TrajectoryCalculator.js"></script>
+    <script src="js/utils/InputManager.js"></script>
+    <script src="js/scenes/MenuScene.js"></script>
+    <script src="js/scenes/DifficultySelectScene.js"></script>
+    <script src="js/scenes/GameScene.js"></script>
+    <script src="js/scenes/GameOverScene.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+KATANA NINJA - REQUIRED IMAGE ASSETS
+====================================
+
+Based on the game code analysis, here are the image assets that could replace the programmatically generated graphics:
+
+FRUIT SPRITES:
+--------------
+1. fruit_0.png - Orange fruit sprite (50x50px recommended)
+2. fruit_1.png - Red fruit sprite (50x50px recommended)
+3. fruit_2.png - Cyan fruit sprite (50x50px recommended)
+4. fruit_3.png - Blue fruit sprite (50x50px recommended)
+5. fruit_4.png - Green fruit sprite (50x50px recommended)
+6. fruit_5.png - Yellow fruit sprite (50x50px recommended)
+7. fruit.png - Fallback fruit sprite (50x50px recommended)
+
+BOMB SPRITE:
+-----------
+1. bomb.png - Bomb sprite with fuse (40x40px recommended)
+
+ALTERNATIVE FRUIT SPRITES (Specific Types):
+-------------------------------------------
+If you want more realistic fruits instead of colored circles:
+1. apple.png - Red apple
+2. orange.png - Orange fruit
+3. banana.png - Yellow banana
+4. watermelon.png - Green watermelon slice
+5. grape.png - Purple grapes
+6. pineapple.png - Pineapple
+7. strawberry.png - Red strawberry
+8. kiwi.png - Green kiwi slice
+
+PARTICLE EFFECTS (Optional):
+----------------------------
+1. fruit_particle.png - Small fruit piece for slice particles
+2. bomb_particle.png - Dark particle for bomb explosion
+3. sparkle.png - Sparkle effect for combos
+
+BACKGROUND ELEMENTS (Optional):
+------------------------------
+1. background.png - Game background image (instead of gradient)
+2. ninja_logo.png - Katana Ninja logo for menu
+3. wood_texture.png - Wood cutting board texture
+4. blade_trail.png - Katana blade trail effect
+
+UI ELEMENTS (Optional):
+----------------------
+1. heart_icon.png - Lives indicator (instead of emoji)
+2. trophy_icon.png - Score indicator (instead of emoji)
+3. combo_icon.png - Combo indicator (instead of emoji)
+4. button_bg.png - Button background texture
+5. pause_icon.png - Pause button (if implemented)
+
+NOTES:
+------
+- Current game generates all graphics programmatically in MenuScene.js (lines 119-187)
+- All sprites are created as colored circles with highlights
+- Recommended size: 50x50px for fruits, 40x40px for bombs
+- Use PNG format with transparency for best results
+- Keep file sizes optimized for web loading
+- Consider sprite sheets for better performance with many assets
+
+CURRENT IMPLEMENTATION:
+----------------------
+- MenuScene.js lines 124-163: createFruitTextures() - generates 6 fruit variants
+- MenuScene.js lines 165-187: createBombTexture() - generates bomb sprite
+- All textures use Phaser's graphics.generateTexture() method
+- Colors defined in fruitColors array (lines 125-132)
+
+INTEGRATION:
+-----------
+To use image assets instead of generated graphics:
+1. Add preload() method to load image assets
+2. Replace createSimpleAssets() calls with actual asset loading
+3. Update sprite creation in GameScene.js to use loaded textures
+4. Ensure asset keys match the texture generation keys for compatibility
